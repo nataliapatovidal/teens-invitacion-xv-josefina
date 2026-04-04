@@ -1,0 +1,12 @@
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-icon {
+  width: 200px;
+}

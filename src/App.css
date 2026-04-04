@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -17,8 +21,94 @@ body {
   position: relative;
 }
 
-/* BOTÓN MÚSICA */
+/* PANTALLA DE ENTRADA */
+.pantalla-inicio {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #111 0%, #000 80%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 100;
+}
 
+.caja-inicio {
+  width: 100%;
+  max-width: 600px;
+  padding: 60px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(6px);
+}
+
+.bienvenida-texto {
+  color: #bfbfbf;
+  font-size: 18px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.nombre-inicio {
+  font-size: 64px;
+  font-family: "Playfair Display", serif;
+  color: #ffffff;
+  margin: 0 0 20px;
+  line-height: 1;
+}
+
+.linea-decorativa {
+  width: 70%;
+  height: 1px;
+  margin: 20px auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(192, 192, 192, 0.8),
+    transparent
+  );
+}
+
+.subtitulo-inicio {
+  font-size: 28px;
+  color: #d9d9d9;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  font-family: "Playfair Display", serif;
+}
+
+.musica-aviso {
+  color: #a6a6a6;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+.botones-inicio {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-inicio {
+  background: #e6e6e6;
+  color: #111;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-inicio:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* BOTÓN MÚSICA */
 .boton-musica {
   position: fixed;
   top: 20px;
@@ -34,131 +124,91 @@ body {
   z-index: 50;
 }
 
-/* PANTALLA INICIAL */
-
-.pantalla-inicio {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-}
-
-/* Esto centra la invitación y pone el fondo oscuro de afuera */
+/* WRAPPER EXTERIOR */
 .wrapper-fuera {
-  background-color: #121212; /* Un gris muy oscuro (no negro puro) */
+  background-color: #121212;
   min-height: 100vh;
   display: flex;
   justify-content: center;
 }
 
-/* Esta es la tarjeta con la sombra lateral */
 .contenedor-principal {
   width: 80%;
-  max-width: 1000px; /* Ancho máximo estilo móvil */
-  background-color: #000000; /* Negro puro adentro */
+  max-width: 1000px;
+  background-color: #000000;
   min-height: 100vh;
-  box-shadow: 0 0 90px rgba(59, 59, 59, 0.9); /* LA SOMBRA DE LA CAPTURA */
+  box-shadow: 0 0 90px rgba(59, 59, 59, 0.9);
   position: relative;
   overflow: hidden;
-}
-
-.caja-inicio {
-  text-align: center;
-  padding: 40px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.caja-inicio h1 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 4rem;
-  margin: 0;
-}
-
-.caja-inicio h2 {
-  font-family: "Cormorant Garamond", serif;
-  margin-bottom: 20px;
-}
-
-.botones button {
-  margin: 10px;
-  padding: 12px 20px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
 }
 
 /* PORTADA */
 .portada {
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Asegura que el contenido fluya hacia abajo */
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
   text-align: center;
   position: relative;
-  padding-top: 120px;
-  /* AGREGÁ ESTO: */
+  padding-top: 100px;
   padding-bottom: 12rem;
   background: #000;
-  overflow: visible !important; /* Un poco más que los 10rem del margen negativo */
+  overflow: visible !important;
 }
 
 .fondo-curva {
   position: absolute;
-  top: -21px; /* 🔥 ajustá esto */
+  top: -21px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 1000px;
   height: auto;
-
   z-index: 1;
   pointer-events: none;
 }
-
-
 
 .contenido {
   max-width: 800px;
   padding: 60px;
   border-radius: 20px;
-  
   position: relative;
+  
   z-index: 2;
 }
 
-
-/* Solo agregamos esto para el icono nuevo */
-/* Contenedor para centrar el icono */
+/* ICONO FIESTA */
 .contenedor-icono-fiesta {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
+  
 }
 
-/* Estilo para el icono GiPartyPopper */
 .icono-fiesta-gi {
-  color: #ffffff; /* Blanco/Plata puro */
-  font-size: 70px; /* Tamaño ideal para este icono detallado */
+  color: #ffffff;
+  font-size: 70px;
   opacity: 0.9;
-  
-  /* Animación de balanceo muy sutil para que "baile" */
   animation: balanceoFiesta 3s infinite ease-in-out;
-  
-  /* Sin sombras pesadas, solo un toque de nitidez */
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
 }
 
 @keyframes balanceoFiesta {
-  0% { transform: rotate(-5deg); }
-  50% { transform: rotate(5deg); }
-  100% { transform: rotate(-5deg); }
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(4deg);
+  }
 }
 
 /* Ajuste para móviles */
@@ -246,7 +296,7 @@ body {
 
 .flores-seccion {
   position: absolute;
-  top: -150px;          /* antes 0 */
+  top: -160px;          /* antes 0 */
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -259,7 +309,7 @@ body {
   opacity: 0.95;
 }
 .anim-corazon-contador {
-  width: 100px;          /* 🔥 Bajamos de 60px a 45px para que sea más fino */
+  width: 160px;          /* 🔥 Bajamos de 60px a 45px para que sea más fino */
   margin: 35px auto 0;  /* 🔥 Aumentamos el margen superior para despegarlo de los números */
   position: relative;
   z-index: 2;
@@ -276,9 +326,9 @@ body {
   
   /* --- EL TRUCO DEL DEGRADADO --- */
   /* Creamos un degradado que va:
-     - De transparente (extremo izquierdo)
-     - A blanco sólido (pegado al nombre)
-     - Y viceversa para la otra línea
+  - De transparente (extremo izquierdo)
+  - A blanco sólido (pegado al nombre)
+  - Y viceversa para la otra línea
   */
   background: linear-gradient(
     to right, 
@@ -292,14 +342,18 @@ body {
   min-width: 30px; /* Evitamos que desaparezcan del todo en celu */
   opacity: 0.8; /* Un toque de transparencia general para suavizar */
 }
-
-/* Ajuste para el celular (Media Query 480px) */
-@media (max-width: 480px) {
-  .linea-nombre {
-    max-width: 80px; /* Más cortas en el celu */
-    min-width: 20px;
-  }
+.datos-cbu-hermana p {
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
+
+.datos-cbu-hermana strong {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+
 .anim-fiesta {
   width: 95px;
   margin: 0 auto 1.2rem;
@@ -318,11 +372,6 @@ body {
   padding: 70px 3.75rem 3rem;
   max-width: 1000px; /* Equivalente a 62.5rem para mantener consistencia */
   margin: 0 auto;
-  
-  /* El desenfoque de fondo le da el toque "vidrio" (Glassmorphism) */
-  backdrop-filter: blur(8px); 
-  -webkit-backdrop-filter: blur(8px); /* Para que funcione en iPhones/Safari */
-  
   position: relative;
   z-index: 2;
   border-radius: 0 0 20px 20px; /* Opcional: redondeamos solo abajo */
@@ -387,9 +436,11 @@ body {
   padding: 5rem 1.25rem 7rem;
   text-align: center;
   position: relative;
+  
 }
 
 .caja-evento {
+  
   width: 100%;
   max-width: 470px;
   margin: 0 auto;
@@ -397,7 +448,8 @@ body {
   border-radius: 1.8rem;
   border: 1px solid rgba(255, 255, 255, 0.55);
   background: rgba(0, 0, 0, 0.9);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  box-shadow: 0 0 90px rgba(59, 59, 59, 0.9);
+
 }
 
 .caja-evento h2 {
@@ -421,7 +473,7 @@ body {
   font-size: 2.3rem;
   font-weight: 400;
   margin: 0 0 0.65rem;
-  color: #d0e6ee;
+  color: #eed0e6;
 }
 
 .bloque-evento p {
@@ -451,7 +503,7 @@ body {
 
 /* Botón que reemplazó a Agendar */
 .boton-revelar-tarjeta {
- 
+
   color: #050000 !important;
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
 }
@@ -573,36 +625,134 @@ body {
   border-radius: 20px;
 }
 
-@media (max-width: 768px) {
-  .contenido-galeria h2 {
-    font-size: 2.4rem;
-  }
 
-  .contenido-galeria p {
-    font-size: 0.95rem;
-  }
+.brillos-wrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  margin-top: -90px;
+  margin-bottom: -70px;
+  z-index: 1;
+  pointer-events: none;
+}
 
-  .foto-swiper {
-    max-width: 260px;
-    height: 340px;
-  }
+.brillos-global {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1000px;
+  opacity: 0.8;
+  display: block;
+}
 
-  .flor-galeria-img {
-    width: 115%;
-    max-width: none;
+.regalos {
+  background: #000;
+  text-align: center;
+  padding: 30px 20px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.caja-regalos {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+
+.titulo-regalos {
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.texto-regalos {
+  font-size: 18px;
+  color: #bfbfbf;
+  margin-bottom: 35px;
+}
+
+.icono-regalo-contenedor {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+.icono-regalo {
+  font-size: 72px;
+  color: rgba(255, 255, 255, 0.7);
+  animation: flotarRegalo 2.8s ease-in-out infinite;
+}
+
+.boton-regalo {
+  background: #e8e8e8;
+  color: #111;
+  border: none;
+  border-radius: 14px;
+  padding: 18px 34px;
+  font-size: 18px;
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-regalo:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.datos-regalo {
+  margin-top: 30px;
+  padding: 25px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #e5e5e5;
+}
+
+.datos-regalo p {
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.animacion-fade-in {
+  animation: fadeInSuave 0.5s ease;
+}
+
+@keyframes fadeInSuave {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 480px) {
-  .foto-swiper {
-    max-width: 220px;
-    height: 300px;
+@keyframes flotarRegalo {
+  0%, 100% {
+    transform: translateY(0);
   }
-
-  .contenido-galeria h2 {
-    font-size: 2rem;
+  50% {
+    transform: translateY(-10px);
   }
 }
+
+
+/* Ajuste para el celular (Media Query 480px) */
+
+
 
 @media (max-width: 992px) {
   .contenido h1 {
@@ -633,13 +783,13 @@ body {
 
   /* 3. Portada (Ajuste de Padding para el solapamiento) */
   .portada {
-    padding-top: 80px;
-    padding-bottom: 2rem; /* Colchón para que el contador no tape el texto */
+    padding-top: 100px;
+    padding-bottom: .125rem; /* Colchón para que el contador no tape el texto */
   }
 
   .contenido {
     max-width: calc(100% - 32px);
-    padding: 40px 15px; /* Un poco menos de padding lateral para ganar aire */
+    padding: 5rem 15px; /* Un poco menos de padding lateral para ganar aire */
   }
   .contenido h1 { font-size: 3.2rem; }
   .contenido h2 { font-size: 1.8rem; }
@@ -647,19 +797,19 @@ body {
 
   /* 4. Cuenta Regresiva y Flores */
 .cuenta {
-  margin-top: 0;
-  padding-top: 3rem;
+  margin-top: -150px;
+  padding-top: 1rem;
   z-index: 20;
   position: relative;
 }
 
 .flores-seccion {
-  top: -150px;
+  top: -160px;
   max-width: 100%;
 }
 
 .caja-contador {
-  padding: .625rem 1.4rem 2.5rem;
+  padding: .3125rem 1.4rem 2.5rem;
   max-width: 92%;
 }
 
@@ -711,18 +861,126 @@ body {
     font-size: 55px; /* Un poco más chico en celulares */
   }
 
+  .contenido-galeria h2 {
+    font-size: 2.4rem;
+  }
+
+  .contenido-galeria p {
+    font-size: 0.95rem;
+  }
+
+  .foto-swiper {
+    max-width: 260px;
+    height: 340px;
+  }
+
+  .flor-galeria-img {
+    width: 115%;
+    max-width: none;
+  }
+
+
+  .titulo-regalos {
+    font-size: 48px;
+  }
+
+  .texto-regalos {
+    font-size: 16px;
+  }
+
+  .boton-regalo {
+    font-size: 16px;
+    padding: 16px 26px;
+  }
+
+  .icono-regalo {
+    font-size: 62px;
+  }
+
+
+  .brillos-wrap {
+    height: 80px;
+    margin-top: -70px;
+    margin-bottom: -60px;
+  }
+
+  .brillos-global {
+    width: 100%;
+    max-width: none;
+    opacity: 0.75;
+  
+}
+
+  .titulo-regalos {
+    font-size: 48px;
+  }
+
+  .texto-regalos {
+    font-size: 16px;
+  }
+
+  .boton-regalo {
+    font-size: 16px;
+    padding: 16px 26px;
+  }
+
+  .icono-regalo {
+    font-size: 62px;
+  }
+
+
+  .brillos-wrap {
+    height: 80px;
+    margin-top: -70px;
+    margin-bottom: -60px;
+  }
+
+  .brillos-global {
+    width: 100%;
+    max-width: none;
+    opacity: 0.75;
+  
+}
+
+
 }
 
 
 @media (max-width: 480px) {
-  /* 1. Textos Principales */
-  .contenido h1 {
-    font-size: 2rem;
-    margin-bottom: 5px;
+  /* 1. Reset General y Estructura Base */
+  .portada {
+    position: relative;
+    overflow: visible; /* Permitimos que las flores sobresalgan */
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to bottom, #000 80%, transparent 100%);
   }
 
-  .contenido h2 {
-    font-size: 1.2rem;
+  /* Eliminamos pseudoelementos que estorben visualmente */
+  .portada::after, 
+  .portada::before {
+    display: none;
+  }
+
+  /* 2. Textos y Contenido */
+  .contenido {
+    position: relative;
+    z-index: 2;
+    padding-top: 0.1875rem;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .contenido h1 { font-size: 3rem; margin-bottom: 7px; }
+  .contenido h2 { font-size: 1.2rem; }
+  
+  .portada .texto {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    padding: 0 15px;
+    margin-top: 225px;
   }
 
   .fecha {
@@ -730,177 +988,156 @@ body {
     letter-spacing: 2px;
   }
 
-  /* 2. Caja del Contador */
- .caja-contador {
-  padding: 5rem 0.5rem 2rem !important;
-  width: 95% !important;
-  margin: 0 auto;
-}
-
+  /* 3. El Contador (Compactado) */
+/* 3. El Contador */
+  .caja-contador {
+    /* CAMBIO: Subimos de 6rem a 10rem (o el número que necesites) */
+    padding: 10rem 0.5rem 2rem !important; 
+    width: 95%;
+    margin: 0 auto;
+    position: relative; 
+    z-index: 5 !important;
+  }
   .caja-contador h2 {
-    font-size: 1.8rem !important;
-    margin-bottom: 1rem !important;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
   }
 
-  /* 3. Estructura del Contador (Fila) */
   .contador {
-    display: flex !important;
-    flex-wrap: nowrap !important; /* Asegura una sola línea */
-    justify-content: space-evenly !important;
-    align-items: center !important;
-    width: 100% !important;
-    padding: 0 !important;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0;
   }
 
-  /* 4. Columnas de Tiempo */
   .item-tiempo {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    flex: 1 !important;
-    position: relative !important;
-    min-width: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    min-width: 0;
   }
 
   .item-tiempo span {
-    font-size: 1.6rem !important;
-    line-height: 1.1 !important;
+    font-size: 1.6rem;
+    line-height: 1.1;
     font-weight: 300;
-    text-align: center !important;
-    display: block !important;
   }
 
   .item-tiempo p {
-    font-size: 0.6rem !important;
-    margin: 2px 0 0 0 !important;
+    font-size: 0.6rem;
+    margin: 2px 0 0 0;
     letter-spacing: 1px;
-    text-align: center !important;
   }
 
-  /* 5. Líneas Divisorias */
+  /* Líneas divisorias del contador */
   .item-tiempo:not(:last-child)::after {
-    content: "" !important;
-    position: absolute !important;
-    right: 0 !important;
-    top: 20% !important;
-    height: 60% !important;
-    width: 1px !important;
-    background: rgba(255, 255, 255, 0.2) !important;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
   }
 
-  /* 6. Decoración (Corazón y Flores) */
-  .anim-corazon-contador {
-    width: 45px !important;
-    margin: 25px auto 0 !important;
-  }
-
- .cuenta {
-  margin-top: 0 !important;
-  z-index: 10;
-  padding-top: .3125rem;
-}
-
-.flores-seccion {
-  top: -60px !important;
-  max-width: 115% !important;
-}
-  
-.portada {
-    position: relative;
-    /* CAMBIO CLAVE: Quitamos el hidden para que las flores que "suben" no se corten */
-    overflow: visible !important; 
-    min-height: 70vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Aseguramos que el fondo de la portada no termine en un hachazo */
-    background: linear-gradient(to bottom, #000 80%, transparent 100%) !important;
+  /* 4. Decoración y Flores */
+/* 4. Decoración y Flores */
+ .flores-seccion {
+    position: absolute;
+    /* CAMBIO: Usamos un número positivo para que bajen */
+    top: 60px !important; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110%;
+    z-index: 0 !important; 
+    opacity: 0.8;
+    pointer-events: none;
   }
 
   .fondo-curva {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%); /* La centra horizontalmente */
-    
-    /* LA CLAVE: */
-    width: 150% !important;   /* La agrandamos un poco más que el ancho del celu */
-    max-width: none !important; 
+    transform: translateX(-50%);
+    width: 150%;
     height: auto;
-    z-index: 1;               /* Asegura que quede atrás del texto */
-    
-    /* Si la imagen se va muy arriba, podés jugar con este valor: */
-    margin-top: -3px; 
+    z-index: 1;
+    margin-top: -3px;
   }
 
-  .contenido {
-    position: relative;
-    z-index: 2; /* El texto por encima de las estrellas */
-    padding-top: .1875rem; /* Le damos aire arriba para que no tape el diseño de las estrellas */
+  .anim-corazon-contador {
+    width: 45px;
+    margin: 25px auto 0;
   }
 
-  .portada .texto {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    padding: 0 15px; /* Para que el texto no toque los bordes del celu */
-    margin-top: 15px;
-  }
-/* Eliminamos cualquier sombra o degradado que tape las flores */
-  .portada::after, .portada::before {
-    display: none !important;
-    background: none !important;
-  }
-
-  .contenido {
-    background: transparent !important; /* Aseguramos que el contenedor no tenga fondo */
-    box-shadow: none !important;
-  }
-
-
+  /* 5. Sección Evento */
   .evento {
-    padding: .3125rem 1rem 4rem !important; /* Bajamos de 5rem a 2rem el espacio inicial */
-    margin-top: -2rem; /* Lo subimos un poquito para cerrar el bache negro */
+    padding: 0.3125rem 1rem 4rem;
+    margin-top: -2rem; /* Sube para cerrar el bache negro */
   }
 
   .caja-evento {
-    padding: 2rem 1.5rem !important; /* Menos aire interno para que rinda más la pantalla */
-    border-radius: 1.2rem !important; /* Un poco menos de curva para que se vea más moderno */
+    padding: 2rem 1.5rem;
+    border-radius: 1.2rem;
   }
 
-  /* El título "Fiesta" principal */
   .caja-evento h2 {
-    font-size: 2.2rem !important; /* De 3.4rem bajamos a 2.2rem */
-    margin-bottom: 1.5rem !important;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
   }
 
-  /* Los subtítulos "Día", "Lugar", "Dirección" */
-  .bloque-evento h3 {
-    font-size: 1.6rem !important; /* Eran muy grandes, ahora más finos */
-    margin-bottom: 0.3rem !important;
-  }
-
-  /* El texto de la info (Sábado 20, Jazz Eventos, etc) */
-  .bloque-evento p {
-    font-size: 0.95rem !important;
-    margin-bottom: 0.8rem !important;
-    color: #ddd !important; /* Un gris claro para que no compita con los títulos */
-  }
-
-  /* Los botones "Agendar", "Confirmar", etc */
-  .boton-evento {
-    min-width: 160px !important; /* Más angostos para móvil */
-    padding: 0.7rem 1.2rem !important; /* Más bajitos */
-    font-size: 0.9rem !important;
-    border-radius: 0.5rem !important;
-  }
-
-  /* Reducimos el espacio entre bloques para que entre más info en una sola vista */
   .bloque-evento {
-    margin-bottom: 2rem !important;
+    margin-bottom: 2rem;
   }
 
+  .bloque-evento h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .bloque-evento p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    color: #ddd;
+  }
+
+  .boton-evento {
+    min-width: 160px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+  }
+
+  /* 6. Otros Componentes (Galería, Regalos, etc) */
+  .foto-swiper {
+    max-width: 220px;
+    height: 300px;
+  }
+
+  .contenido-galeria h2 { font-size: 2rem; }
+  .linea-nombre { max-width: 80px; min-width: 20px; }
+  .titulo-regalos { font-size: 40px; }
+  .texto-regalos { font-size: 15px; }
+
+  .datos-cbu-hermana {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .datos-cbu-hermana p {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .brillos-superior {
+    width: 170%;
+  }
+
+
+  
 }
-
-
-
-

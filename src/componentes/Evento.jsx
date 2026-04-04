@@ -34,7 +34,7 @@ function Evento() {
             onClick={() => setVerTarjeta(!verTarjeta)} 
             className="boton-evento boton-revelar-tarjeta"
           >
-            {verTarjeta ? "Ocultar Valor Tarjeta" : "Tarjeta-Info"}
+            {verTarjeta ? "Ocultar Valor Tarjeta" : "Valor-Tarjeta"}
           </button>
 
           {/* --- DESPLEGABLE DE TARJETA INFO --- */}
