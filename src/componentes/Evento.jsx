@@ -40,13 +40,11 @@ function Evento() {
           {verTarjeta && (
             <div className="detalles-tarjeta-desplegable animacion-fade-in">
               <div className="precio-box p-4 rounded shadow-sm">
-
                 <div>
                   <h5 className="fw-bold mb-1">Adolescentes</h5>
                   <p className="precio mb-0">$10.000</p>
                   <small className="text-muted">(Hasta los 16 años)
                      <hr />
-                     
                      Confirmar asistencia hasta el 20/04.
                   </small>
                 </div>
